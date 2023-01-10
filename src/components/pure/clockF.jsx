@@ -21,7 +21,7 @@ const ClockF = () => {
 
     const [Reloj, setReloj] = useState(state);
   
-    //!Falta mejorar el el componentDidMount, componentWillUnmount
+    //!Falta mejorar el componentDidMount, componentWillUnmount
     useEffect(() => {
         console.log("Componente creado ")
 

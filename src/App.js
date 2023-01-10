@@ -6,6 +6,8 @@ import MiComponentConContexto from './hooks/ejemplo3';
 import Ejemplo4 from './hooks/ejemplo4';
 import TaskListComponent from './components/container/task_list';
 import GrettingStyled from './components/pure/grettingStyled';
+import Clock from './components/pure/clock';
+import ClockF from './components/pure/clockF';
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
          </Ejemplo4>
          */}
          {/* <TaskListComponent></TaskListComponent> */}
-         <GrettingStyled name="John"></GrettingStyled>
+         {/* <GrettingStyled name="John"></GrettingStyled> */}
+         {/* <Clock></Clock> */}
+         <ClockF></ClockF>
       </header>
     </div>
   );
