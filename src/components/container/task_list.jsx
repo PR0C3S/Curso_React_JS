@@ -9,9 +9,11 @@ import '../../styles/task.scss'
 const TaskListComponent = () => {
 
     const defaultTask = new Task("Example","Default descirption",false,LEVELS.NORMAL);
+    const defaultTask2 = new Task("Example2","Default descirption",true,LEVELS.URGENT);
+    const defaultTask3 = new Task("Example3","Default descirption",true,LEVELS.BLOCKING);
 
     //estado del componente
-    const [tasks, setTasks] = useState([defaultTask]);
+    const [tasks, setTasks] = useState([defaultTask,defaultTask2,defaultTask3]);
     const [loading, setLoading] = useState(true);
 
     //control del ciclo de vida del componente
@@ -29,12 +31,42 @@ const TaskListComponent = () => {
     }
     
     return (
-        <div>
-            <div>
-               <h1> Your Tasks:</h1>
-            <TaskComponent task={defaultTask}></TaskComponent>
+        
+            <div className='col-12'>
+            <div class="card">
+                <div class="card-header">
+                <h1>Your Tasks:</h1>
+                </div>
+                <div className='card-body' 
+                data-mdb-perfect-scrollbar='true'
+                style={ {position: 'relative', color:'black'} }>
+
+                    <table className='table'>
+                        <thead>
+                            <tr>
+                                <th scope='col'>Title</th>
+                                <th scope='col'>Description</th>
+                                <th scope='col'>Priority</th>
+                                <th scope='col'>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {/** TODO: Iterar sobre una lista de tareas */}
+                            { tasks.map((task,index) => {
+                                return(
+                                <TaskComponent key={index} task={task}></TaskComponent>
+
+                                )
+                            }) }
+                        </tbody>
+
+                    </table>
+                </div>
+                </div>
+           
             </div>
-        </div>
+        
     );
 };
 

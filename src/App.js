@@ -6,12 +6,13 @@ import MiComponentConContexto from './hooks/ejemplo3';
 import Ejemplo4 from './hooks/ejemplo4';
 import TaskListComponent from './components/container/task_list';
 import GrettingStyled from './components/pure/grettingStyled';
+import Father from './components/container/father';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="log i o"/> */}
         {/*<Ejemplo1></Ejemplo1>*/}¨
         {/*<Ejemplo2></Ejemplo2> */}
         {/* <MiComponentConContexto></MiComponentConContexto> */}
@@ -24,8 +25,11 @@ function App() {
         
          </Ejemplo4>
          */}
-         {/* <TaskListComponent></TaskListComponent> */}
-         <GrettingStyled name="John"></GrettingStyled>
+        {/* <TaskListComponent></TaskListComponent> */}
+         {/* <GrettingStyled name="John"></GrettingStyled> */}
+         <Father></Father>
+         
+         
       </header>
     </div>
   );
