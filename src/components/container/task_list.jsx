@@ -5,6 +5,7 @@ import TaskComponent from '../pure/task';
 
 // Importamos la hoja de estilos de task.scss
 import '../../styles/task.scss'
+import TaskForm from '../pure/forms/taskForm';
 
 const TaskListComponent = () => {
 
@@ -26,9 +27,41 @@ const TaskListComponent = () => {
         };
     }, [tasks]);
     
-    const changeCompleted = (id) =>{
-        console.log("TODO: Cambiar estado de una tarea")
+    function completeTask(task)
+    {
+        console.log(`Complete this task: ${task}`);
+        const index = tasks.indexOf(task);
+        const tempTask = [...tasks];
+        tempTask[index].completed = !tempTask[index].completed;
+
+        //We update the state of the component with the new list of tasks and it will update 
+        //the iteration of the tasks in order to show the task updated 
+        setTasks(tempTask);
     }
+
+    function deleteTask(task)
+    {
+        console.log(`Complete this task: ${task}`);
+        const index = tasks.indexOf(task);
+        const tempTask = [...tasks];
+        tempTask.splice(index,1);
+        //We update the state of the component with the new list of tasks and it will update 
+        //the iteration of the tasks in order to show the task updated 
+        setTasks(tempTask);
+    }
+
+    function addTask(task)
+    {
+        console.log(`Add this task: ${task}`);
+        const tempTask = [...tasks];
+        tempTask.push(task);
+        //We update the state of the component with the new list of tasks and it will update 
+        //the iteration of the tasks in order to show the task updated 
+        setTasks(tempTask);
+
+    }
+
+    
     
     return (
         
@@ -55,13 +88,17 @@ const TaskListComponent = () => {
                             {/** TODO: Iterar sobre una lista de tareas */}
                             { tasks.map((task,index) => {
                                 return(
-                                <TaskComponent key={index} task={task}></TaskComponent>
+                                <TaskComponent key={index} task={task} 
+                                complete={completeTask}
+                                deleted={deleteTask}>
+                                </TaskComponent>
 
                                 )
                             }) }
                         </tbody>
-
                     </table>
+                    <TaskForm add={addTask}></TaskForm>
+
                 </div>
                 </div>
            

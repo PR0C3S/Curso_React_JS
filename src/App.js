@@ -25,9 +25,9 @@ function App() {
         
          </Ejemplo4>
          */}
-        {/* <TaskListComponent></TaskListComponent> */}
+        <TaskListComponent></TaskListComponent>
          {/* <GrettingStyled name="John"></GrettingStyled> */}
-         <Father></Father>
+         {/* <Father></Father> */}
          
          
       </header>
